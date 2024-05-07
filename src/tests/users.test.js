@@ -7,7 +7,7 @@
 
 // READ documentation
 
-const users = require('../data.js');
+// const users = require('../users.js');
 const {
     getUsersById,
     // getUsersByUsername
@@ -16,12 +16,11 @@ const {
 describe('getUsersById', () => {
     it('It should retrieve the correct user for a given ID', () => {
         const user = users[1];
-        expect(getUsersById(2)).toEqual(user);
+        expect(getUsersById(2)).toEqual(users);
     });
 
-   it('It should fail to get the user', () => {
-    const user = users[3];
-    expect(getUsersById(2)).toEqual(user);
-   })
+    it('Should fail to get the user', () => {
+        expect(getUsersById(6)).toBeNull();
+    });
 });
 
